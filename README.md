@@ -3,6 +3,13 @@
 **Agentic Data-Quality Incident Detection, Root-Cause Analysis and Guarded Remediation**<br>
 **Project ID:** HSR-AGAI-001 · **DIP integration:** Digital Image Processing-Based Visual Data-Quality Inspection
 
+## Our team
+
+| Student | Roll number | Email | Department | Institute |
+|---|---|---|---|---|
+| Tishya Jha | 23CD3049 | [23cd3049@rgipt.ac.in](mailto:23cd3049@rgipt.ac.in) | Computer Science and Design Engineering | Rajiv Gandhi Institute of Petroleum Technology |
+| Aarna Kumar | 23CD3001 | [23cd3001@rgipt.ac.in](mailto:23cd3001@rgipt.ac.in) | Computer Science and Design Engineering | Rajiv Gandhi Institute of Petroleum Technology |
+
 We developed DataGuard AI as a reproducible, local-first prototype for investigating unreliable data-pipeline runs. Our workflow combines structured quality rules, anomaly detection, evidence-grounded root-cause hypotheses, local runbook retrieval, guarded simulated actions, human approval for higher-risk repair, and post-action verification.
 
 We made Digital Image Processing (DIP) a central perception contribution: our prototype encodes canonical telemetry as a Data Quality Fingerprint (DQF), processes it with classical image operations, and maps segmented regions back to run and metric evidence. DIP complements our structured quality checks; it does not replace them or infer causes by itself.
