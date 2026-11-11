@@ -11,8 +11,8 @@
 - **Current status:** CP-0 through CP-9 implemented: local data/quality/DIP/detection, incident/RCA/RAG, guarded orchestrator/tools, SQLite-backed API, API-only dashboard, saved measurements, paper source, and combined SIH presentation.
 - **Latest verified tests:** `UV_CACHE_DIR=/tmp/datagard-uv-cache uv run pytest -q` - 28 passed, one upstream Starlette TestClient deprecation warning. Restart tests cover incident/timeline persistence and resuming approved repair. Presentation package/layout/import checks passed for the 11-slide combined deck.
 - **Known decisions:** See `ARCHITECTURE_AND_REQUIREMENTS.md` and `docs/decisions.md`.
-- **Current blockers:** No local prototype blocker. DQF contribution still needs instructor acceptance. Synthetic data and small operational sets are not production evidence. IEEE source is ready to paste into Overleaf; local LaTeX compilation was skipped at the user's direction.
-- **Next smallest task:** Validate the report and presentation with the course reviewers; broaden evaluation with additional seeds and approved real data when available.
+- **Current blockers:** No local prototype blocker. The supplied compiled IEEE PDF is included and verified as four pages. Synthetic data and small operational sets are not production evidence. Apply the form-specific `Name_RollNumber_` filename prefix to each upload; the optional PPTX has a section-numbering polish issue.
+- **Next smallest task:** Rename each submission file for the relevant student form; optionally correct the deck section labels before upload.
 
 ## Iteration ledger (append only)
 
@@ -244,3 +244,17 @@ Copy this for each meaningful iteration; fill it with verified facts.
 - **Config/data/schema/docs changed:** README points to v5; source SIH copy and its original problem/solution flow remain preserved.
 - **Known risks/regressions/blockers:** Locally launched UI serving remains disallowed by the sandbox; saved screenshots are genuine from the earlier live app. Overleaf compilation remains user-directed.
 - **Next smallest task:** Course review.
+
+### ITERATION 015 - 2026-11-12 - Submission package and repository link audit
+
+- **Checkpoint:** CP-9 / submission handoff
+- **Requirement IDs:** G-13, G-15, G-16, G-17, NFR-08, NFR-12
+- **Change summary and reason:** Added the supplied compiled IEEE paper PDF to `output/`, added the course Drive folder and direct GitHub artifact links to the README, and checked the paper/deck against the submission checklist. Relocated `ACTION.md` to the repository root and `AGENTS.md` to `Legacy_Docs_Imp/` without changing their contents before this ledger entry.
+- **Files created/modified/deleted:** Added `output/23cd3049_23cd3001_DataGuardAI.pdf`; updated `README.md` and this ledger; moved `Legacy_Docs_Imp/ACTION.md` to `ACTION.md` and `AGENTS.md` to `Legacy_Docs_Imp/AGENTS.md`.
+- **Existing logic reused:** Existing compiled paper, final 11-slide deck, saved synthetic evaluation outputs, and course submission checklist supplied by the user.
+- **New logic added (why it was not duplicative):** No application logic added. The README is an index to the existing code, evidence, and submission materials.
+- **Tests/commands run:** `pdfinfo` on the supplied and repository PDF; bundled `pdftoppm` rendered all four pages for visual inspection; PDF SHA-256 comparison; PPTX ZIP integrity and 11-slide content inspection.
+- **Results:** PASS - PDF is four pages, Letter size, unencrypted, and visually readable with no obvious clipping; copied file hash matches the supplied PDF. PPTX is structurally intact and includes the flow, implementation, measured results, and dashboard screenshots.
+- **Config/data/schema/docs changed:** README now includes the provided Drive link and direct GitHub links to source, report, datasets, metrics, masks, tests, and screenshots. It records the four-page PDF as present and the group-upload filename prefix as a form-specific final step.
+- **Known risks/regressions/blockers:** Dataset and all measured evaluations are synthetic/small as disclosed. Optional deck slide numbering skips from 04 to 08 and repeats 10 on the dashboard slides. Apply the required student-name/roll-number prefix on files uploaded through each student's form.
+- **Next smallest task:** Submit the four-page PDF separately and select no more than ten individually named supporting files; correct deck numbering if time permits.
