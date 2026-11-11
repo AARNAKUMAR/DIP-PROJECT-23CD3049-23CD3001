@@ -287,3 +287,17 @@ Copy this for each meaningful iteration; fill it with verified facts.
 - **Config/data/schema/docs changed:** README and append-only project ledger only.
 - **Known risks/regressions/blockers:** The remote had no `main` branch at the start of this iteration; this branch is based on the validated `dataguardv1` snapshot. All reported evaluation remains synthetic, and limits are stated in the README.
 - **Next smallest task:** Review the public `main` branch and set the repository default branch to `main` if desired.
+
+### ITERATION 019 - 2026-11-12 - Student-team voice in project README
+
+- **Checkpoint:** CP-9 / evaluation handoff documentation
+- **Requirement IDs:** G-15, G-16, G-17, NFR-08, NFR-12
+- **Change summary and reason:** Reworded the evaluation README in first-person plural so it reflects our student team's project, implementation, method, evidence, and limitations while retaining the measured figures and cautions.
+- **Files created/modified/deleted:** Updated `README.md` and appended this ledger entry; the same README is synchronized to `dataguardv1`. The archived collaboration README remains unchanged.
+- **Existing logic reused:** Existing implementation, evaluation protocol, saved results and artifact links.
+- **New logic added (why it was not duplicative):** No runtime logic added; only narrative voice changed.
+- **Tests/commands run:** `git diff --check`; local link and metric consistency audit; compare root README with the updated `dataguardv1` copy after synchronization.
+- **Results:** PASS - 21 local links resolve; reported figures remain unchanged; first-person team voice and scope caveats are present.
+- **Config/data/schema/docs changed:** README and append-only project ledger only.
+- **Known risks/regressions/blockers:** None identified; evaluation limitations remain explicitly stated.
+- **Next smallest task:** None for this README update; both published branches carry the student-team version.
