@@ -272,3 +272,18 @@ Copy this for each meaningful iteration; fill it with verified facts.
 - **Config/data/schema/docs changed:** README now links v6 and records its Cambria usage and rendering caveat. No application behavior or evaluation outputs changed.
 - **Known risks/regressions/blockers:** Cambria is not installed in the local renderer, which substitutes another serif font during preview; confirm the final layout in PowerPoint with Cambria available. The genuine dashboard screenshots contain their original UI typography and remain unaltered.
 - **Next smallest task:** Open v6 in PowerPoint with Cambria available and complete the name/roll-number file prefixes for submission.
+
+
+### ITERATION 017 - 2026-11-12 - Evaluation-focused main-branch README
+
+- **Checkpoint:** CP-9 / evaluation handoff documentation
+- **Requirement IDs:** G-15, G-16, G-17, NFR-08, NFR-12
+- **Change summary and reason:** Prepared an evaluator-oriented README for the `main` branch that presents the implemented workflow, DIP contribution, measured results with denominators, reproducible commands, evidence links, and limitations. The existing collaboration README remains on `dataguardv1`.
+- **Files created/modified/deleted:** Updated `README.md` and appended this entry to `ACTION.md`; no source code, data, or measured artifacts changed.
+- **Existing logic reused:** Implementation descriptions and metrics were checked against the architecture requirements, evaluation protocol, tracked outputs, and saved project artifacts.
+- **New logic added (why it was not duplicative):** No application logic added; documentation was reorganized for academic review and explicit evidence-first interpretation.
+- **Tests/commands run:** `git diff --check`; Python Markdown-link target audit; confirmed reported values and denominators against `docs/evaluation_protocol.md` and confirmed linked local files are tracked. No application tests were run because no code changed.
+- **Results:** PASS - no whitespace errors or missing local link targets; the displayed metrics/denominators match the evaluation protocol; linked deliverables are present in the branch.
+- **Config/data/schema/docs changed:** README and append-only project ledger only.
+- **Known risks/regressions/blockers:** The remote had no `main` branch at the start of this iteration; this branch is based on the validated `dataguardv1` snapshot. All reported evaluation remains synthetic, and limits are stated in the README.
+- **Next smallest task:** Review the public `main` branch and set the repository default branch to `main` if desired.
