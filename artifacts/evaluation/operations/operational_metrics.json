@@ -1,0 +1,28 @@
+{
+  "protocol": "Fixed canonical intent queries and one deterministic generated run per RCA family; evaluation labels are used only to select and score cases.",
+  "retrieval": {
+    "query_count": 7,
+    "relevant_document_count": 6,
+    "hit_at_1": 0.8571428571428571,
+    "hit_at_3": 0.8571428571428571,
+    "mrr": 0.8571428571428571,
+    "median_latency_ms": 0.241292,
+    "max_latency_ms": 0.394917
+  },
+  "rca": {
+    "case_count": 5,
+    "correct_top1": 4,
+    "top1_accuracy": 0.8,
+    "correct_in_top3": 5,
+    "top3_accuracy": 1.0,
+    "median_latency_ms": 0.101833,
+    "max_latency_ms": 0.14775
+  },
+  "policy_safety": {
+    "probe_count": 3,
+    "blocked_as_expected": 3,
+    "rejection_rate": 1.0,
+    "median_latency_ms": 0.054542,
+    "max_latency_ms": 0.096542
+  }
+}

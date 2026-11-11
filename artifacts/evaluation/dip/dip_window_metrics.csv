@@ -1,0 +1,7 @@
+window_index,scenario_ids,method,true_positive,false_positive,false_negative,true_negative,valid_pixel_count,ground_truth_positive_count,predicted_positive_count,precision,recall,f1,iou
+0,"benign_seasonality,clean,combined_incident,distribution_shift,missing_telemetry,null_surge,row_count_drop",DIP-B0,33,15,0,298,346,33,48,0.6875,1.0,0.8148148148148148,0.6875
+0,"benign_seasonality,clean,combined_incident,distribution_shift,missing_telemetry,null_surge,row_count_drop",DIP-P1,33,119,0,194,346,33,152,0.21710526315789475,1.0,0.3567567567567568,0.21710526315789475
+1,"benign_seasonality,clean,distribution_shift,missing_telemetry,null_surge,schema_drift",DIP-B0,30,32,0,284,346,30,62,0.4838709677419355,1.0,0.6521739130434783,0.4838709677419355
+1,"benign_seasonality,clean,distribution_shift,missing_telemetry,null_surge,schema_drift",DIP-P1,30,125,0,191,346,30,155,0.1935483870967742,1.0,0.32432432432432434,0.1935483870967742
+2,"benign_seasonality,combined_incident,duplicate_spike,missing_telemetry,null_surge,row_count_drop,runtime_spike,schema_drift",DIP-B0,27,4,0,301,332,27,31,0.8709677419354839,1.0,0.9310344827586207,0.8709677419354839
+2,"benign_seasonality,combined_incident,duplicate_spike,missing_telemetry,null_surge,row_count_drop,runtime_spike,schema_drift",DIP-P1,27,131,0,174,332,27,158,0.17088607594936708,1.0,0.2918918918918919,0.17088607594936708

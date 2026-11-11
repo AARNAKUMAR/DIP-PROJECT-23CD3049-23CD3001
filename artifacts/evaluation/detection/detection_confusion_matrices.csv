@@ -1,0 +1,5 @@
+detector_name,sample_count,true_positive,false_positive,false_negative,true_negative
+rule_baseline,72,28,0,14,30
+isolation_forest_structured,72,41,29,1,1
+ablation_structured_only,43,28,15,0,0
+ablation_structured_plus_dip,43,28,9,0,6

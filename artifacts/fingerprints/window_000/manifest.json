@@ -1,0 +1,536 @@
+{
+  "adaptive_mask_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_000/improved_adaptive_mask.png",
+  "artifact_id": "run-00252_run-00281_dqf-1.0",
+  "baseline_mask_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_000/baseline_mask.png",
+  "baseline_overlay_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_000/baseline_overlay.png",
+  "baseline_version": "healthy-median-mad-1",
+  "channel_map": [
+    "output_rows",
+    "duration_ms",
+    "schema.change_count",
+    "order_id.null_rate",
+    "order_id.distinct_count",
+    "customer_id.null_rate",
+    "customer_id.distinct_count",
+    "amount.null_rate",
+    "amount.mean",
+    "amount.standard_deviation",
+    "amount.minimum",
+    "amount.maximum"
+  ],
+  "created_at": "2026-11-11T19:34:10.474806Z",
+  "encoder_version": "dqf-1.0",
+  "filtered_image_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_000/improved_filtered.png",
+  "ground_truth_mask_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_000/ground_truth_mask.png",
+  "improved_mask_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_000/improved_mask.png",
+  "improved_overlay_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_000/improved_overlay.png",
+  "parameters": {
+    "adaptive_block_size": 11,
+    "adaptive_c": -2.0,
+    "artifact_dir": "artifacts/fingerprints",
+    "baseline_method": "global_otsu",
+    "baseline_version": "healthy-median-mad-1",
+    "channel_order": [
+      "output_rows",
+      "duration_ms",
+      "schema.change_count",
+      "order_id.null_rate",
+      "order_id.distinct_count",
+      "customer_id.null_rate",
+      "customer_id.distinct_count",
+      "amount.null_rate",
+      "amount.mean",
+      "amount.standard_deviation",
+      "amount.minimum",
+      "amount.maximum"
+    ],
+    "connected_components_connectivity": 8,
+    "encoder_version": "dqf-1.0",
+    "evaluation_dir": "artifacts/evaluation/dip",
+    "fixed_threshold": 48,
+    "improved_method": "adaptive_threshold_then_configured_morphology",
+    "median_filter_enabled": false,
+    "median_kernel_size": 3,
+    "morphology_kernel_size": 3,
+    "morphology_operation": "close",
+    "region_match_iou_min": 0.5,
+    "robust_scale_k": 5.0,
+    "scale_floor": 0.001,
+    "threshold_method": "otsu",
+    "training_group_fraction": 0.7,
+    "window_size": 30,
+    "window_stride": 30
+  },
+  "pipeline_id": "orders_daily",
+  "processing_duration_ms": 1.5350419998867437,
+  "raw_image_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_000/fingerprint.png",
+  "regions": [
+    {
+      "area": 3,
+      "centroid_x": 0.0,
+      "centroid_y": 1.0,
+      "channel_ids": [
+        "output_rows"
+      ],
+      "component_id": 1,
+      "density": 1.0,
+      "height": 3,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00252",
+        "run-00253",
+        "run-00254"
+      ],
+      "width": 1,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "area": 1,
+      "centroid_x": 4.0,
+      "centroid_y": 1.0,
+      "channel_ids": [
+        "order_id.distinct_count"
+      ],
+      "component_id": 2,
+      "density": 1.0,
+      "height": 1,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00253"
+      ],
+      "width": 1,
+      "x": 4,
+      "y": 1
+    },
+    {
+      "area": 3,
+      "centroid_x": 8.0,
+      "centroid_y": 7.0,
+      "channel_ids": [
+        "amount.mean"
+      ],
+      "component_id": 3,
+      "density": 1.0,
+      "height": 3,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00258",
+        "run-00259",
+        "run-00260"
+      ],
+      "width": 1,
+      "x": 8,
+      "y": 6
+    },
+    {
+      "area": 1,
+      "centroid_x": 0.0,
+      "centroid_y": 8.0,
+      "channel_ids": [
+        "output_rows"
+      ],
+      "component_id": 4,
+      "density": 1.0,
+      "height": 1,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00260"
+      ],
+      "width": 1,
+      "x": 0,
+      "y": 8
+    },
+    {
+      "area": 4,
+      "centroid_x": 4.75,
+      "centroid_y": 9.5,
+      "channel_ids": [
+        "order_id.distinct_count",
+        "customer_id.null_rate"
+      ],
+      "component_id": 5,
+      "density": 0.5,
+      "height": 4,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00260",
+        "run-00261",
+        "run-00262",
+        "run-00263"
+      ],
+      "width": 2,
+      "x": 4,
+      "y": 8
+    },
+    {
+      "area": 7,
+      "centroid_x": 0.0,
+      "centroid_y": 15.0,
+      "channel_ids": [
+        "output_rows"
+      ],
+      "component_id": 6,
+      "density": 1.0,
+      "height": 7,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00264",
+        "run-00265",
+        "run-00266",
+        "run-00267",
+        "run-00268",
+        "run-00269",
+        "run-00270"
+      ],
+      "width": 1,
+      "x": 0,
+      "y": 12
+    },
+    {
+      "area": 6,
+      "centroid_x": 4.5,
+      "centroid_y": 16.0,
+      "channel_ids": [
+        "order_id.distinct_count",
+        "customer_id.null_rate"
+      ],
+      "component_id": 7,
+      "density": 0.6,
+      "height": 5,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00266",
+        "run-00267",
+        "run-00268",
+        "run-00269",
+        "run-00270"
+      ],
+      "width": 2,
+      "x": 4,
+      "y": 14
+    },
+    {
+      "area": 3,
+      "centroid_x": 8.0,
+      "centroid_y": 16.0,
+      "channel_ids": [
+        "amount.mean"
+      ],
+      "component_id": 8,
+      "density": 1.0,
+      "height": 3,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00267",
+        "run-00268",
+        "run-00269"
+      ],
+      "width": 1,
+      "x": 8,
+      "y": 15
+    },
+    {
+      "area": 3,
+      "centroid_x": 0.0,
+      "centroid_y": 22.0,
+      "channel_ids": [
+        "output_rows"
+      ],
+      "component_id": 9,
+      "density": 1.0,
+      "height": 3,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00273",
+        "run-00274",
+        "run-00275"
+      ],
+      "width": 1,
+      "x": 0,
+      "y": 21
+    },
+    {
+      "area": 5,
+      "centroid_x": 4.6,
+      "centroid_y": 22.0,
+      "channel_ids": [
+        "order_id.distinct_count",
+        "customer_id.null_rate"
+      ],
+      "component_id": 10,
+      "density": 0.8333333333333334,
+      "height": 3,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00273",
+        "run-00274",
+        "run-00275"
+      ],
+      "width": 2,
+      "x": 4,
+      "y": 21
+    },
+    {
+      "area": 9,
+      "centroid_x": 8.333333333333334,
+      "centroid_y": 24.0,
+      "channel_ids": [
+        "amount.mean",
+        "amount.standard_deviation"
+      ],
+      "component_id": 11,
+      "density": 0.75,
+      "height": 6,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00273",
+        "run-00274",
+        "run-00275",
+        "run-00276",
+        "run-00277",
+        "run-00278"
+      ],
+      "width": 2,
+      "x": 8,
+      "y": 21
+    },
+    {
+      "area": 3,
+      "centroid_x": 11.0,
+      "centroid_y": 25.0,
+      "channel_ids": [
+        "amount.maximum"
+      ],
+      "component_id": 12,
+      "density": 1.0,
+      "height": 3,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00276",
+        "run-00277",
+        "run-00278"
+      ],
+      "width": 1,
+      "x": 11,
+      "y": 24
+    },
+    {
+      "area": 3,
+      "centroid_x": 0.0,
+      "centroid_y": 1.0,
+      "channel_ids": [
+        "output_rows"
+      ],
+      "component_id": 1,
+      "density": 1.0,
+      "height": 3,
+      "method": "DIP-P1",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00252",
+        "run-00253",
+        "run-00254"
+      ],
+      "width": 1,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "area": 72,
+      "centroid_x": 6.513888888888889,
+      "centroid_y": 8.208333333333334,
+      "channel_ids": [
+        "order_id.distinct_count",
+        "customer_id.null_rate",
+        "customer_id.distinct_count",
+        "amount.null_rate",
+        "amount.mean",
+        "amount.standard_deviation"
+      ],
+      "component_id": 2,
+      "density": 0.6,
+      "height": 20,
+      "method": "DIP-P1",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00252",
+        "run-00253",
+        "run-00254",
+        "run-00255",
+        "run-00256",
+        "run-00257",
+        "run-00258",
+        "run-00259",
+        "run-00260",
+        "run-00261",
+        "run-00262",
+        "run-00263",
+        "run-00264",
+        "run-00265",
+        "run-00266",
+        "run-00267",
+        "run-00268",
+        "run-00269",
+        "run-00270",
+        "run-00271"
+      ],
+      "width": 6,
+      "x": 4,
+      "y": 0
+    },
+    {
+      "area": 19,
+      "centroid_x": 0.15789473684210525,
+      "centroid_y": 10.894736842105264,
+      "channel_ids": [
+        "output_rows",
+        "duration_ms"
+      ],
+      "component_id": 3,
+      "density": 0.59375,
+      "height": 16,
+      "method": "DIP-P1",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00256",
+        "run-00257",
+        "run-00258",
+        "run-00259",
+        "run-00260",
+        "run-00261",
+        "run-00262",
+        "run-00263",
+        "run-00264",
+        "run-00265",
+        "run-00266",
+        "run-00267",
+        "run-00268",
+        "run-00269",
+        "run-00270",
+        "run-00271"
+      ],
+      "width": 2,
+      "x": 0,
+      "y": 4
+    },
+    {
+      "area": 58,
+      "centroid_x": 4.896551724137931,
+      "centroid_y": 25.46551724137931,
+      "channel_ids": [
+        "output_rows",
+        "duration_ms",
+        "schema.change_count",
+        "order_id.null_rate",
+        "order_id.distinct_count",
+        "customer_id.null_rate",
+        "customer_id.distinct_count",
+        "amount.null_rate",
+        "amount.mean",
+        "amount.standard_deviation",
+        "amount.minimum",
+        "amount.maximum"
+      ],
+      "component_id": 4,
+      "density": 0.5370370370370371,
+      "height": 9,
+      "method": "DIP-P1",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00273",
+        "run-00274",
+        "run-00275",
+        "run-00276",
+        "run-00277",
+        "run-00278",
+        "run-00279",
+        "run-00280",
+        "run-00281"
+      ],
+      "width": 12,
+      "x": 0,
+      "y": 21
+    }
+  ],
+  "run_map": [
+    "run-00252",
+    "run-00253",
+    "run-00254",
+    "run-00255",
+    "run-00256",
+    "run-00257",
+    "run-00258",
+    "run-00259",
+    "run-00260",
+    "run-00261",
+    "run-00262",
+    "run-00263",
+    "run-00264",
+    "run-00265",
+    "run-00266",
+    "run-00267",
+    "run-00268",
+    "run-00269",
+    "run-00270",
+    "run-00271",
+    "run-00272",
+    "run-00273",
+    "run-00274",
+    "run-00275",
+    "run-00276",
+    "run-00277",
+    "run-00278",
+    "run-00279",
+    "run-00280",
+    "run-00281"
+  ],
+  "validity_mask_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_000/validity_mask.png",
+  "warnings": [
+    "missing_telemetry_pixels:14"
+  ],
+  "window_run_ids": [
+    "run-00252",
+    "run-00253",
+    "run-00254",
+    "run-00255",
+    "run-00256",
+    "run-00257",
+    "run-00258",
+    "run-00259",
+    "run-00260",
+    "run-00261",
+    "run-00262",
+    "run-00263",
+    "run-00264",
+    "run-00265",
+    "run-00266",
+    "run-00267",
+    "run-00268",
+    "run-00269",
+    "run-00270",
+    "run-00271",
+    "run-00272",
+    "run-00273",
+    "run-00274",
+    "run-00275",
+    "run-00276",
+    "run-00277",
+    "run-00278",
+    "run-00279",
+    "run-00280",
+    "run-00281"
+  ]
+}

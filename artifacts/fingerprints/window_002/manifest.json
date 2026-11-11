@@ -1,0 +1,457 @@
+{
+  "adaptive_mask_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_002/improved_adaptive_mask.png",
+  "artifact_id": "run-00312_run-00341_dqf-1.0",
+  "baseline_mask_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_002/baseline_mask.png",
+  "baseline_overlay_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_002/baseline_overlay.png",
+  "baseline_version": "healthy-median-mad-1",
+  "channel_map": [
+    "output_rows",
+    "duration_ms",
+    "schema.change_count",
+    "order_id.null_rate",
+    "order_id.distinct_count",
+    "customer_id.null_rate",
+    "customer_id.distinct_count",
+    "amount.null_rate",
+    "amount.mean",
+    "amount.standard_deviation",
+    "amount.minimum",
+    "amount.maximum"
+  ],
+  "created_at": "2026-11-11T19:34:10.484038Z",
+  "encoder_version": "dqf-1.0",
+  "filtered_image_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_002/improved_filtered.png",
+  "ground_truth_mask_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_002/ground_truth_mask.png",
+  "improved_mask_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_002/improved_mask.png",
+  "improved_overlay_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_002/improved_overlay.png",
+  "parameters": {
+    "adaptive_block_size": 11,
+    "adaptive_c": -2.0,
+    "artifact_dir": "artifacts/fingerprints",
+    "baseline_method": "global_otsu",
+    "baseline_version": "healthy-median-mad-1",
+    "channel_order": [
+      "output_rows",
+      "duration_ms",
+      "schema.change_count",
+      "order_id.null_rate",
+      "order_id.distinct_count",
+      "customer_id.null_rate",
+      "customer_id.distinct_count",
+      "amount.null_rate",
+      "amount.mean",
+      "amount.standard_deviation",
+      "amount.minimum",
+      "amount.maximum"
+    ],
+    "connected_components_connectivity": 8,
+    "encoder_version": "dqf-1.0",
+    "evaluation_dir": "artifacts/evaluation/dip",
+    "fixed_threshold": 48,
+    "improved_method": "adaptive_threshold_then_configured_morphology",
+    "median_filter_enabled": false,
+    "median_kernel_size": 3,
+    "morphology_kernel_size": 3,
+    "morphology_operation": "close",
+    "region_match_iou_min": 0.5,
+    "robust_scale_k": 5.0,
+    "scale_floor": 0.001,
+    "threshold_method": "otsu",
+    "training_group_fraction": 0.7,
+    "window_size": 30,
+    "window_stride": 30
+  },
+  "pipeline_id": "orders_daily",
+  "processing_duration_ms": 0.24766699971223716,
+  "raw_image_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_002/fingerprint.png",
+  "regions": [
+    {
+      "area": 3,
+      "centroid_x": 0.0,
+      "centroid_y": 4.0,
+      "channel_ids": [
+        "output_rows"
+      ],
+      "component_id": 1,
+      "density": 1.0,
+      "height": 3,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00315",
+        "run-00316",
+        "run-00317"
+      ],
+      "width": 1,
+      "x": 0,
+      "y": 3
+    },
+    {
+      "area": 6,
+      "centroid_x": 4.5,
+      "centroid_y": 8.5,
+      "channel_ids": [
+        "order_id.distinct_count",
+        "customer_id.null_rate"
+      ],
+      "component_id": 2,
+      "density": 0.5,
+      "height": 6,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00318",
+        "run-00319",
+        "run-00320",
+        "run-00321",
+        "run-00322",
+        "run-00323"
+      ],
+      "width": 2,
+      "x": 4,
+      "y": 6
+    },
+    {
+      "area": 1,
+      "centroid_x": 0.0,
+      "centroid_y": 11.0,
+      "channel_ids": [
+        "output_rows"
+      ],
+      "component_id": 3,
+      "density": 1.0,
+      "height": 1,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00323"
+      ],
+      "width": 1,
+      "x": 0,
+      "y": 11
+    },
+    {
+      "area": 3,
+      "centroid_x": 8.0,
+      "centroid_y": 16.0,
+      "channel_ids": [
+        "amount.mean"
+      ],
+      "component_id": 4,
+      "density": 1.0,
+      "height": 3,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00327",
+        "run-00328",
+        "run-00329"
+      ],
+      "width": 1,
+      "x": 8,
+      "y": 15
+    },
+    {
+      "area": 9,
+      "centroid_x": 1.0,
+      "centroid_y": 22.0,
+      "channel_ids": [
+        "output_rows",
+        "duration_ms",
+        "schema.change_count"
+      ],
+      "component_id": 5,
+      "density": 0.3333333333333333,
+      "height": 9,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00330",
+        "run-00331",
+        "run-00332",
+        "run-00333",
+        "run-00334",
+        "run-00335",
+        "run-00336",
+        "run-00337",
+        "run-00338"
+      ],
+      "width": 3,
+      "x": 0,
+      "y": 18
+    },
+    {
+      "area": 3,
+      "centroid_x": 0.0,
+      "centroid_y": 28.0,
+      "channel_ids": [
+        "output_rows"
+      ],
+      "component_id": 6,
+      "density": 1.0,
+      "height": 3,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00339",
+        "run-00340",
+        "run-00341"
+      ],
+      "width": 1,
+      "x": 0,
+      "y": 27
+    },
+    {
+      "area": 3,
+      "centroid_x": 5.0,
+      "centroid_y": 28.0,
+      "channel_ids": [
+        "customer_id.null_rate"
+      ],
+      "component_id": 7,
+      "density": 1.0,
+      "height": 3,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00339",
+        "run-00340",
+        "run-00341"
+      ],
+      "width": 1,
+      "x": 5,
+      "y": 27
+    },
+    {
+      "area": 3,
+      "centroid_x": 8.0,
+      "centroid_y": 28.0,
+      "channel_ids": [
+        "amount.mean"
+      ],
+      "component_id": 8,
+      "density": 1.0,
+      "height": 3,
+      "method": "DIP-B0",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00339",
+        "run-00340",
+        "run-00341"
+      ],
+      "width": 1,
+      "x": 8,
+      "y": 27
+    },
+    {
+      "area": 72,
+      "centroid_x": 3.9583333333333335,
+      "centroid_y": 7.263888888888889,
+      "channel_ids": [
+        "output_rows",
+        "duration_ms",
+        "schema.change_count",
+        "order_id.null_rate",
+        "order_id.distinct_count",
+        "customer_id.null_rate",
+        "customer_id.distinct_count",
+        "amount.null_rate",
+        "amount.mean",
+        "amount.standard_deviation"
+      ],
+      "component_id": 1,
+      "density": 0.45,
+      "height": 16,
+      "method": "DIP-P1",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00312",
+        "run-00313",
+        "run-00314",
+        "run-00315",
+        "run-00316",
+        "run-00317",
+        "run-00318",
+        "run-00319",
+        "run-00320",
+        "run-00321",
+        "run-00322",
+        "run-00323",
+        "run-00324",
+        "run-00325",
+        "run-00326",
+        "run-00327"
+      ],
+      "width": 10,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "area": 1,
+      "centroid_x": 7.0,
+      "centroid_y": 1.0,
+      "channel_ids": [
+        "amount.null_rate"
+      ],
+      "component_id": 2,
+      "density": 1.0,
+      "height": 1,
+      "method": "DIP-P1",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00313"
+      ],
+      "width": 1,
+      "x": 7,
+      "y": 1
+    },
+    {
+      "area": 1,
+      "centroid_x": 7.0,
+      "centroid_y": 13.0,
+      "channel_ids": [
+        "amount.null_rate"
+      ],
+      "component_id": 3,
+      "density": 1.0,
+      "height": 1,
+      "method": "DIP-P1",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00325"
+      ],
+      "width": 1,
+      "x": 7,
+      "y": 13
+    },
+    {
+      "area": 1,
+      "centroid_x": 9.0,
+      "centroid_y": 13.0,
+      "channel_ids": [
+        "amount.standard_deviation"
+      ],
+      "component_id": 4,
+      "density": 1.0,
+      "height": 1,
+      "method": "DIP-P1",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00325"
+      ],
+      "width": 1,
+      "x": 9,
+      "y": 13
+    },
+    {
+      "area": 83,
+      "centroid_x": 4.506024096385542,
+      "centroid_y": 22.674698795180724,
+      "channel_ids": [
+        "output_rows",
+        "duration_ms",
+        "schema.change_count",
+        "order_id.null_rate",
+        "order_id.distinct_count",
+        "customer_id.null_rate",
+        "customer_id.distinct_count",
+        "amount.null_rate",
+        "amount.mean",
+        "amount.standard_deviation"
+      ],
+      "component_id": 5,
+      "density": 0.5533333333333333,
+      "height": 15,
+      "method": "DIP-P1",
+      "peak_intensity": 255,
+      "run_ids": [
+        "run-00327",
+        "run-00328",
+        "run-00329",
+        "run-00330",
+        "run-00331",
+        "run-00332",
+        "run-00333",
+        "run-00334",
+        "run-00335",
+        "run-00336",
+        "run-00337",
+        "run-00338",
+        "run-00339",
+        "run-00340",
+        "run-00341"
+      ],
+      "width": 10,
+      "x": 0,
+      "y": 15
+    }
+  ],
+  "run_map": [
+    "run-00312",
+    "run-00313",
+    "run-00314",
+    "run-00315",
+    "run-00316",
+    "run-00317",
+    "run-00318",
+    "run-00319",
+    "run-00320",
+    "run-00321",
+    "run-00322",
+    "run-00323",
+    "run-00324",
+    "run-00325",
+    "run-00326",
+    "run-00327",
+    "run-00328",
+    "run-00329",
+    "run-00330",
+    "run-00331",
+    "run-00332",
+    "run-00333",
+    "run-00334",
+    "run-00335",
+    "run-00336",
+    "run-00337",
+    "run-00338",
+    "run-00339",
+    "run-00340",
+    "run-00341"
+  ],
+  "validity_mask_path": "/Users/tishyajha/workspace/dip_proj/DIP-PROJECT/artifacts/fingerprints/window_002/validity_mask.png",
+  "warnings": [
+    "missing_telemetry_pixels:28"
+  ],
+  "window_run_ids": [
+    "run-00312",
+    "run-00313",
+    "run-00314",
+    "run-00315",
+    "run-00316",
+    "run-00317",
+    "run-00318",
+    "run-00319",
+    "run-00320",
+    "run-00321",
+    "run-00322",
+    "run-00323",
+    "run-00324",
+    "run-00325",
+    "run-00326",
+    "run-00327",
+    "run-00328",
+    "run-00329",
+    "run-00330",
+    "run-00331",
+    "run-00332",
+    "run-00333",
+    "run-00334",
+    "run-00335",
+    "run-00336",
+    "run-00337",
+    "run-00338",
+    "run-00339",
+    "run-00340",
+    "run-00341"
+  ]
+}

@@ -1,0 +1,17 @@
+method,component_id,x,y,width,height,centroid_x,centroid_y,area,peak_intensity,density,run_ids,channel_ids
+DIP-B0,1,0,0,1,3,0.0,1.0,3,255,1.0,run-00252;run-00253;run-00254,output_rows
+DIP-B0,2,4,1,1,1,4.0,1.0,1,255,1.0,run-00253,order_id.distinct_count
+DIP-B0,3,8,6,1,3,8.0,7.0,3,255,1.0,run-00258;run-00259;run-00260,amount.mean
+DIP-B0,4,0,8,1,1,0.0,8.0,1,255,1.0,run-00260,output_rows
+DIP-B0,5,4,8,2,4,4.75,9.5,4,255,0.5,run-00260;run-00261;run-00262;run-00263,order_id.distinct_count;customer_id.null_rate
+DIP-B0,6,0,12,1,7,0.0,15.0,7,255,1.0,run-00264;run-00265;run-00266;run-00267;run-00268;run-00269;run-00270,output_rows
+DIP-B0,7,4,14,2,5,4.5,16.0,6,255,0.6,run-00266;run-00267;run-00268;run-00269;run-00270,order_id.distinct_count;customer_id.null_rate
+DIP-B0,8,8,15,1,3,8.0,16.0,3,255,1.0,run-00267;run-00268;run-00269,amount.mean
+DIP-B0,9,0,21,1,3,0.0,22.0,3,255,1.0,run-00273;run-00274;run-00275,output_rows
+DIP-B0,10,4,21,2,3,4.6,22.0,5,255,0.8333333333333334,run-00273;run-00274;run-00275,order_id.distinct_count;customer_id.null_rate
+DIP-B0,11,8,21,2,6,8.333333333333334,24.0,9,255,0.75,run-00273;run-00274;run-00275;run-00276;run-00277;run-00278,amount.mean;amount.standard_deviation
+DIP-B0,12,11,24,1,3,11.0,25.0,3,255,1.0,run-00276;run-00277;run-00278,amount.maximum
+DIP-P1,1,0,0,1,3,0.0,1.0,3,255,1.0,run-00252;run-00253;run-00254,output_rows
+DIP-P1,2,4,0,6,20,6.513888888888889,8.208333333333334,72,255,0.6,run-00252;run-00253;run-00254;run-00255;run-00256;run-00257;run-00258;run-00259;run-00260;run-00261;run-00262;run-00263;run-00264;run-00265;run-00266;run-00267;run-00268;run-00269;run-00270;run-00271,order_id.distinct_count;customer_id.null_rate;customer_id.distinct_count;amount.null_rate;amount.mean;amount.standard_deviation
+DIP-P1,3,0,4,2,16,0.15789473684210525,10.894736842105264,19,255,0.59375,run-00256;run-00257;run-00258;run-00259;run-00260;run-00261;run-00262;run-00263;run-00264;run-00265;run-00266;run-00267;run-00268;run-00269;run-00270;run-00271,output_rows;duration_ms
+DIP-P1,4,0,21,12,9,4.896551724137931,25.46551724137931,58,255,0.5370370370370371,run-00273;run-00274;run-00275;run-00276;run-00277;run-00278;run-00279;run-00280;run-00281,output_rows;duration_ms;schema.change_count;order_id.null_rate;order_id.distinct_count;customer_id.null_rate;customer_id.distinct_count;amount.null_rate;amount.mean;amount.standard_deviation;amount.minimum;amount.maximum

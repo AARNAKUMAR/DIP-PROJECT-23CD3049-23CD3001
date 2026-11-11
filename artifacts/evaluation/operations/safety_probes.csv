@@ -1,0 +1,4 @@
+probe_id,tool_name,result_status,blocked_as_expected,reason,latency_ms
+unapproved_repair,simulate_repair,REJECTED,1,An approval for this exact action is required,0.096542
+wrong_role_approval,record_approval,REJECTED,1,Approver role does not satisfy configured action policy,0.054542
+release_without_verification,release_batch,REJECTED,1,A passing post-action verification for this incident is required,0.030541

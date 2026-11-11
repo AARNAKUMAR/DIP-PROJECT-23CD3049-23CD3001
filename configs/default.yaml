@@ -1,0 +1,94 @@
+app_name: DataGuard AI
+environment: development
+log_level: INFO
+api_host: 127.0.0.1
+api_port: 8000
+dashboard_api_base_url: http://127.0.0.1:8000
+synthetic_seed: 20261112
+runs_per_scenario: 12
+scenario_persistence_runs: 3
+data_output_dir: artifacts/data
+quality:
+  null_rate_max: 0.05
+  duplicate_rate_max: 0.02
+  row_count_drop_max: 0.20
+  distribution_z_score_max: 3.0
+  field_ranges:
+    amount: [0.0, 1000.0]
+features:
+  names:
+    - input_rows
+    - output_drop_ratio
+    - duration_ms
+    - mean_null_rate
+    - max_null_rate
+    - max_duplicate_rate
+    - schema_change_count
+    - invalid_range_count
+    - distribution_z_score_max
+    - missing_telemetry_count
+    - quality_finding_count
+  dip_region_names:
+    - dip_max_region_persistence
+    - dip_region_density
+    - dip_affected_channel_count
+detection:
+  model_version: isolation-forest-1
+  random_state: 20261112
+  n_estimators: 160
+  max_samples: 1.0
+  contamination: auto
+  max_features: 1.0
+  bootstrap: false
+  n_jobs: 1
+  baseline_severities: [HIGH, CRITICAL]
+  ablation_dip_method: DIP-B0
+evaluation:
+  training_group_fraction: 0.6
+  validation_group_fraction: 0.2
+  output_dir: artifacts/evaluation/detection
+  model_dir: artifacts/models
+retrieval:
+  runbooks_dir: data/runbooks
+  top_k: 3
+rca:
+  runtime_spike_ratio: 2.0
+actions:
+  artifact_dir: artifacts/actions
+  approval_required_tools: [simulate_repair]
+  approval_role: data_engineer
+persistence:
+  database_path: artifacts/dataguard.sqlite3
+dip:
+  encoder_version: dqf-1.0
+  baseline_version: healthy-median-mad-1
+  window_size: 30
+  channel_order:
+    - output_rows
+    - duration_ms
+    - schema.change_count
+    - order_id.null_rate
+    - order_id.distinct_count
+    - customer_id.null_rate
+    - customer_id.distinct_count
+    - amount.null_rate
+    - amount.mean
+    - amount.standard_deviation
+    - amount.minimum
+    - amount.maximum
+  robust_scale_k: 5.0
+  scale_floor: 0.001
+  artifact_dir: artifacts/fingerprints
+  threshold_method: otsu
+  fixed_threshold: 48
+  median_filter_enabled: false
+  median_kernel_size: 3
+  adaptive_block_size: 11
+  adaptive_c: -2.0
+  morphology_operation: close
+  morphology_kernel_size: 3
+  connected_components_connectivity: 8
+  region_match_iou_min: 0.5
+  evaluation_dir: artifacts/evaluation/dip
+  window_stride: 30
+  training_group_fraction: 0.7

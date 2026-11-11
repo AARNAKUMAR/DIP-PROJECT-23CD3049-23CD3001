@@ -1,0 +1,14 @@
+method,component_id,x,y,width,height,centroid_x,centroid_y,area,peak_intensity,density,run_ids,channel_ids
+DIP-B0,1,0,3,1,3,0.0,4.0,3,255,1.0,run-00315;run-00316;run-00317,output_rows
+DIP-B0,2,4,6,2,6,4.5,8.5,6,255,0.5,run-00318;run-00319;run-00320;run-00321;run-00322;run-00323,order_id.distinct_count;customer_id.null_rate
+DIP-B0,3,0,11,1,1,0.0,11.0,1,255,1.0,run-00323,output_rows
+DIP-B0,4,8,15,1,3,8.0,16.0,3,255,1.0,run-00327;run-00328;run-00329,amount.mean
+DIP-B0,5,0,18,3,9,1.0,22.0,9,255,0.3333333333333333,run-00330;run-00331;run-00332;run-00333;run-00334;run-00335;run-00336;run-00337;run-00338,output_rows;duration_ms;schema.change_count
+DIP-B0,6,0,27,1,3,0.0,28.0,3,255,1.0,run-00339;run-00340;run-00341,output_rows
+DIP-B0,7,5,27,1,3,5.0,28.0,3,255,1.0,run-00339;run-00340;run-00341,customer_id.null_rate
+DIP-B0,8,8,27,1,3,8.0,28.0,3,255,1.0,run-00339;run-00340;run-00341,amount.mean
+DIP-P1,1,0,0,10,16,3.9583333333333335,7.263888888888889,72,255,0.45,run-00312;run-00313;run-00314;run-00315;run-00316;run-00317;run-00318;run-00319;run-00320;run-00321;run-00322;run-00323;run-00324;run-00325;run-00326;run-00327,output_rows;duration_ms;schema.change_count;order_id.null_rate;order_id.distinct_count;customer_id.null_rate;customer_id.distinct_count;amount.null_rate;amount.mean;amount.standard_deviation
+DIP-P1,2,7,1,1,1,7.0,1.0,1,255,1.0,run-00313,amount.null_rate
+DIP-P1,3,7,13,1,1,7.0,13.0,1,255,1.0,run-00325,amount.null_rate
+DIP-P1,4,9,13,1,1,9.0,13.0,1,255,1.0,run-00325,amount.standard_deviation
+DIP-P1,5,0,15,10,15,4.506024096385542,22.674698795180724,83,255,0.5533333333333333,run-00327;run-00328;run-00329;run-00330;run-00331;run-00332;run-00333;run-00334;run-00335;run-00336;run-00337;run-00338;run-00339;run-00340;run-00341,output_rows;duration_ms;schema.change_count;order_id.null_rate;order_id.distinct_count;customer_id.null_rate;customer_id.distinct_count;amount.null_rate;amount.mean;amount.standard_deviation

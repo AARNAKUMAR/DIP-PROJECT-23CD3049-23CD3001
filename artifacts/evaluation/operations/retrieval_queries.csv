@@ -1,0 +1,8 @@
+query_id,expected_document,top1_document,rank_of_expected,hit_at_1,hit_at_3,reciprocal_rank,latency_ms,top_refs
+schema_drift,schema_drift,schema_drift,1,1,1,1.0,0.394917,schema_drift#02|schema_drift#03|null_surge#02
+row_count_drop,row_count_drop,row_count_drop,1,1,1,1.0,0.284583,row_count_drop#02|row_count_drop#03|null_surge#02
+null_surge,null_surge,null_surge,1,1,1,1.0,0.257292,null_surge#02|null_surge#03|distribution_shift#03
+duplicate_spike,duplicate_spike,duplicate_spike,1,1,1,1.0,0.225042,duplicate_spike#03|duplicate_spike#02
+distribution_shift,distribution_shift,distribution_shift,1,1,1,1.0,0.23,distribution_shift#03|null_surge#02|duplicate_spike#02
+safe_rerun,safe_rerun,duplicate_spike,,0,0,0.0,0.237584,duplicate_spike#02|duplicate_spike#03|row_count_drop#02
+escalation,escalation,escalation,1,1,1,1.0,0.241292,escalation#02|schema_drift#03|null_surge#02

@@ -1,0 +1,3 @@
+method,true_positive,false_positive,false_negative,predicted_region_count,ground_truth_region_count,precision,recall,f1,mean_matched_iou,iou_match_threshold
+DIP-B0,22,18,1,40,23,0.55,0.9565217391304348,0.6984126984126984,0.8806277056277056,0.5
+DIP-P1,1,18,22,19,23,0.05263157894736842,0.043478260869565216,0.047619047619047616,1.0,0.5

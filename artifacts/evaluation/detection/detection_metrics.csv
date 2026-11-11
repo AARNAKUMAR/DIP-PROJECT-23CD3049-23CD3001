@@ -1,0 +1,5 @@
+detector_name,sample_count,positive_count,negative_count,true_positive,false_positive,false_negative,true_negative,precision,recall,f1,average_precision
+rule_baseline,72,42,30,28,0,14,30,1.0,0.6666666666666666,0.8,
+isolation_forest_structured,72,42,30,41,29,1,1,0.5857142857142857,0.9761904761904762,0.7321428571428571,0.5914699771959633
+ablation_structured_only,43,28,15,28,15,0,0,0.6511627906976745,1.0,0.7887323943661971,0.7636944232808811
+ablation_structured_plus_dip,43,28,15,28,9,0,6,0.7567567567567568,1.0,0.8615384615384616,0.6725267565632458

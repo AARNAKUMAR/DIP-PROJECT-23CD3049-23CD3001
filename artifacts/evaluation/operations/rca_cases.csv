@@ -1,0 +1,6 @@
+scenario_id,expected_top_cause,predicted_top_cause,correct_top1,correct_in_top3,rank_of_expected,latency_ms,evidence_count
+row_count_drop,UPSTREAM_VOLUME_DROP,UPSTREAM_VOLUME_DROP,1,1,1,0.14775,1
+schema_drift,SCHEMA_DRIFT,SCHEMA_DRIFT,1,1,1,0.082166,2
+null_surge,SOURCE_NULL_SURGE,SOURCE_NULL_SURGE,1,1,1,0.101833,1
+duplicate_spike,DUPLICATE_KEY_GENERATION,DUPLICATE_KEY_GENERATION,1,1,1,0.094792,1
+distribution_shift,SOURCE_OR_TRANSFORM_SHIFT,OUT_OF_RANGE_VALUES,0,1,2,0.135416,2
