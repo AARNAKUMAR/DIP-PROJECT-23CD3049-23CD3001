@@ -8,11 +8,11 @@
 - **DIP contribution:** Data Quality Fingerprint image encoding + classical DIP segmentation and region evidence
 - **Architecture:** Python modular monolith; FastAPI backend; Streamlit API client; SQLite persistence
 - **Current checkpoint:** CP-9 - evaluation and release evidence (complete)
-- **Current status:** CP-0 through CP-9 implemented: local data/quality/DIP/detection, incident/RCA/RAG, guarded orchestrator/tools, SQLite-backed API, API-only dashboard, saved measurements, paper source, and combined SIH presentation.
+- **Current status:** CP-0 through CP-9 implemented: local data/quality/DIP/detection, incident/RCA/RAG, guarded orchestrator/tools, SQLite-backed API, API-only dashboard, saved measurements, paper source, and 11-slide combined SIH/DIP v6 presentation.
 - **Latest verified tests:** `UV_CACHE_DIR=/tmp/datagard-uv-cache uv run pytest -q` - 28 passed, one upstream Starlette TestClient deprecation warning. Restart tests cover incident/timeline persistence and resuming approved repair. Presentation package/layout/import checks passed for the 11-slide combined deck.
 - **Known decisions:** See `ARCHITECTURE_AND_REQUIREMENTS.md` and `docs/decisions.md`.
-- **Current blockers:** No local prototype blocker. The supplied compiled IEEE PDF is included and verified as four pages. Synthetic data and small operational sets are not production evidence. Apply the form-specific `Name_RollNumber_` filename prefix to each upload; the optional PPTX has a section-numbering polish issue.
-- **Next smallest task:** Rename each submission file for the relevant student form; optionally correct the deck section labels before upload.
+- **Current blockers:** No local prototype blocker. The supplied compiled IEEE PDF is included and verified as four pages. Synthetic data and small operational sets are not production evidence. Apply the form-specific `Name_RollNumber_` filename prefix to each upload. Cambria is assigned throughout editable deck text/theme; the local renderer lacks the font, so verify final wrapping in PowerPoint where Cambria is available.
+- **Next smallest task:** Check the v6 presentation in PowerPoint with Cambria available; rename submission files for each student's form.
 
 ## Iteration ledger (append only)
 
@@ -258,3 +258,17 @@ Copy this for each meaningful iteration; fill it with verified facts.
 - **Config/data/schema/docs changed:** README now includes the provided Drive link and direct GitHub links to source, report, datasets, metrics, masks, tests, and screenshots. It records the four-page PDF as present and the group-upload filename prefix as a form-specific final step.
 - **Known risks/regressions/blockers:** Dataset and all measured evaluations are synthetic/small as disclosed. Optional deck slide numbering skips from 04 to 08 and repeats 10 on the dashboard slides. Apply the required student-name/roll-number prefix on files uploaded through each student's form.
 - **Next smallest task:** Submit the four-page PDF separately and select no more than ten individually named supporting files; correct deck numbering if time permits.
+
+### ITERATION 016 - 2026-11-12 - DIP-centered presentation and Cambria styling
+
+- **Checkpoint:** CP-9 / final presentation polish
+- **Requirement IDs:** G-16, G-17, NFR-08, NFR-12
+- **Change summary and reason:** Revised the solution, architecture, method, implementation, and evaluation slides to make DIP's role as the visual-evidence bridge easy to see. The DQF → DIP regions → run/metric mapping is highlighted in the deck's teal visual language inspired by the architecture document. Normalized section labels and applied Cambria to editable text and theme font declarations.
+- **Files created/modified/deleted:** Added `output/DataGuard_AI_SIH_Integrated_v6.pptx`; updated `README.md` and this ledger.
+- **Existing logic reused:** The existing 11-slide deck, its genuine dashboard captures, current measured DIP outputs, and the architecture document's DQF/DIP workflow.
+- **New logic added (why it was not duplicative):** No runtime logic added. Slide styling and wording emphasize the existing encoder, OpenCV processing, traceable region mapping, and measured segmentation trade-offs.
+- **Tests/commands run:** LibreOffice PPTX-to-PDF render; reviewed a contact sheet of all 11 slides and full-size renders of changed slides 3-7; verified 11 slides, package integrity, Cambria on 152 editable slide text runs, and Cambria-only typeface declarations in the presentation OOXML.
+- **Results:** PASS - visual review shows the DIP card and evidence path clearly, both DIP methods and results remain readable, screenshots remain unchanged, and the section labels follow the deck order. PPTX package integrity passes.
+- **Config/data/schema/docs changed:** README now links v6 and records its Cambria usage and rendering caveat. No application behavior or evaluation outputs changed.
+- **Known risks/regressions/blockers:** Cambria is not installed in the local renderer, which substitutes another serif font during preview; confirm the final layout in PowerPoint with Cambria available. The genuine dashboard screenshots contain their original UI typography and remain unaltered.
+- **Next smallest task:** Open v6 in PowerPoint with Cambria available and complete the name/roll-number file prefixes for submission.

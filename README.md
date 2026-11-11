@@ -6,8 +6,8 @@ DataGuard AI is an implemented local-first prototype for data-quality incident d
 
 - **Project Google Drive folder:** [Open the group submission folder](https://drive.google.com/drive/folders/14eESeGpSued7mg_-TGGuvwqHC8BtWPKE?usp=sharing)
 - **GitHub source (submitted branch):** [DIP-PROJECT-23CD3049-23CD3001 / `dataguardv1`](https://github.com/AARNAKUMAR/DIP-PROJECT-23CD3049-23CD3001/tree/dataguardv1)
-- **Four-page IEEE paper PDF:** [Download the compiled paper](output/23cd3049_23cd3001_DataGuardAI.pdf) (4 pages; separately upload this PDF)
-- **Combined project presentation:** [Download the 11-slide PPTX](https://github.com/AARNAKUMAR/DIP-PROJECT-23CD3049-23CD3001/blob/dataguardv1/output/DataGuard_AI_SIH_Integrated_v5.pptx)
+- **Four-page IEEE paper PDF:** [Download the compiled paper](output/23cd3049_23cd3001_DataGuardAI.pdf)
+- **Combined project presentation:** [Download the 11-slide DIP-emphasis PPTX](https://github.com/AARNAKUMAR/DIP-PROJECT-23CD3049-23CD3001/blob/dataguardv1/output/DataGuard_AI_SIH_Integrated_v6.pptx)
 - **IEEE paper source:** [Open the LaTeX source](https://github.com/AARNAKUMAR/DIP-PROJECT-23CD3049-23CD3001/blob/dataguardv1/output/DataGuard_AI_IEEE.tex)
 - **Evaluation protocol and measured results:** [Read the evaluation report](https://github.com/AARNAKUMAR/DIP-PROJECT-23CD3049-23CD3001/blob/dataguardv1/docs/evaluation_protocol.md)
 - **Architecture and requirements:** [Read the architecture specification](https://github.com/AARNAKUMAR/DIP-PROJECT-23CD3049-23CD3001/blob/dataguardv1/Legacy_Docs_Imp/ARCHITECTURE_AND_REQUIREMENTS.md)
@@ -27,7 +27,7 @@ DataGuard AI is an implemented local-first prototype for data-quality incident d
 | Requirement | Repository evidence | Status |
 |---|---|---|
 | Separate four-page IEEE conference paper PDF | `output/23cd3049_23cd3001_DataGuardAI.pdf`; verified as four pages | Ready; upload this PDF separately |
-| Supporting files uploaded individually, no ZIP | The combined PPTX is 682,917 bytes; the PDF is 72,729 bytes; both are below 10 MB | Ready to select individually; choose no more than 10 supporting files |
+| Supporting files uploaded individually, no ZIP | The v6 PPTX and compiled paper PDF are both below 10 MB | Ready to select individually; choose no more than 10 supporting files |
 | Problem statement and solution | Slides 2–3 of the combined deck | Present |
 | Methodology, flowchart, and pseudocode | Paper Section III describes the method, includes Fig. 1 workflow diagram, and lists the five-step closed-loop procedure; the deck also shows the workflow | Present in the paper; deck could add a dedicated pseudocode slide if desired |
 | State of the art and references | Paper Section II is titled “Related Work and State of the Art”; it cites eight entries in the references section | Present in the paper; no separate references slide in the optional deck |
@@ -37,9 +37,7 @@ DataGuard AI is an implemented local-first prototype for data-quality incident d
 | Results and dashboard | Held-out metrics, saved outputs, and genuine dashboard screenshots are included | Present; small synthetic and fixed-case evaluation limits are disclosed |
 | Google Drive folder link | Group folder linked above | Present; check access/sharing in the submission form |
 
-The supplied IEEE PDF is 72,729 bytes and was verified as four pages (Letter size, unencrypted); all four rendered pages were visually checked for clipping and obvious layout defects. It includes related work/state of the art, the workflow figure, a numbered algorithmic procedure, measured results, and eight references. The 11-slide PPTX is 682,917 bytes and passes package-integrity checks. Its section labels skip from 04 to 08 and repeat 10 on all three dashboard slides; correcting those labels would improve polish, but the required paper covers the state-of-the-art and references sections.
 
-The supplied submission instructions say to name each uploaded file with the required `Name_RollNumber_` prefix, upload the IEEE PDF as its own file, and avoid ZIP files. The PDF currently has a roll-number-based filename but no student name prefix; apply the exact required name/roll-number prefix for each member's form. Submit the group form separately for each member as instructed and confirm Drive access for the reviewer.
 
 ## Setup
 
