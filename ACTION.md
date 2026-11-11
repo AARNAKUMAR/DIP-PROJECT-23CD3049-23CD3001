@@ -272,3 +272,17 @@ Copy this for each meaningful iteration; fill it with verified facts.
 - **Config/data/schema/docs changed:** README now links v6 and records its Cambria usage and rendering caveat. No application behavior or evaluation outputs changed.
 - **Known risks/regressions/blockers:** Cambria is not installed in the local renderer, which substitutes another serif font during preview; confirm the final layout in PowerPoint with Cambria available. The genuine dashboard screenshots contain their original UI typography and remain unaltered.
 - **Next smallest task:** Open v6 in PowerPoint with Cambria available and complete the name/roll-number file prefixes for submission.
+
+### ITERATION 018 - 2026-11-12 - Align default branch README for evaluation
+
+- **Checkpoint:** CP-9 / evaluation handoff documentation
+- **Requirement IDs:** G-15, G-16, G-17, NFR-08, NFR-12
+- **Change summary and reason:** Replaced the root README on `dataguardv1` with the same evaluator-oriented version published on `main`, and preserved the former collaboration/readiness README in `Legacy_Docs_Imp/README_Collaboration.md` as requested.
+- **Files created/modified/deleted:** Updated `README.md`; added `Legacy_Docs_Imp/README_Collaboration.md`; appended this ledger entry. No application code or evaluation artifacts changed.
+- **Existing logic reused:** The evaluator README and figures from `main` commit `a88e128`; the original `dataguardv1` README is preserved verbatim in the legacy folder.
+- **New logic added (why it was not duplicative):** No application logic added; documentation branch views are aligned while preserving the prior README for collaboration reference.
+- **Tests/commands run:** `git diff --check`; local README link-target audit; byte comparison of the root README with `main:README.md`; byte comparison of the archived README with the previous `HEAD:README.md`.
+- **Results:** PASS - root README byte-matches `main:README.md`; archived README byte-matches the previous root README; all 21 local links resolve; `git diff --check` passes.
+- **Config/data/schema/docs changed:** Root README and legacy documentation only; append-only ledger updated.
+- **Known risks/regressions/blockers:** Existing uncommitted presentation output changes in the worktree are unrelated and must remain unstaged.
+- **Next smallest task:** Confirm the default-branch README and archived collaboration copy after publication.
