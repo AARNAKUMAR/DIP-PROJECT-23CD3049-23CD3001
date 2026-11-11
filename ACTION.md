@@ -1,20 +1,20 @@
-# ACTION.md - DataGuard AI project state and iteration ledger
+# ACTION.md - DataGuard AI codebase state and change ledger
 
-> Mandatory IDE memory file. Update after every meaningful coding/configuration/documentation iteration. Keep the ledger append-only. Do not claim tests passed unless they were executed.
+> Project memory for codebase work only. Record changes that affect source code, tests, configuration, reproducible data or evaluation artifacts, or runtime behavior. Exclude README-only and presentation-only edits, formatting, and branch/history administration. Do not claim tests passed unless they were executed.
 
 ## Current state
 
 - **Project:** HSR-AGAI-001 - Agentic Data Quality Incident Detection, Root-Cause and Remediation Agent
 - **DIP contribution:** Data Quality Fingerprint image encoding + classical DIP segmentation and region evidence
 - **Architecture:** Python modular monolith; FastAPI backend; Streamlit API client; SQLite persistence
-- **Current checkpoint:** CP-9 - evaluation and release evidence (complete)
-- **Current status:** CP-0 through CP-9 implemented: local data/quality/DIP/detection, incident/RCA/RAG, guarded orchestrator/tools, SQLite-backed API, API-only dashboard, saved measurements, paper source, and 11-slide combined SIH/DIP v6 presentation.
-- **Latest verified tests:** `UV_CACHE_DIR=/tmp/datagard-uv-cache uv run pytest -q` - 28 passed, one upstream Starlette TestClient deprecation warning. Restart tests cover incident/timeline persistence and resuming approved repair. Presentation package/layout/import checks passed for the 11-slide combined deck.
+- **Current checkpoint:** CP-9 - evaluation (complete)
+- **Current status:** CP-0 through CP-9 implemented: local data/quality/DIP/detection, incident/RCA/RAG, guarded orchestrator/tools, SQLite-backed API, API-only dashboard, and saved measurements.
+- **Latest verified tests:** `UV_CACHE_DIR=/tmp/datagard-uv-cache uv run pytest -q` - 28 passed, one upstream Starlette TestClient deprecation warning. Restart tests cover incident/timeline persistence and resuming approved repair.
 - **Known decisions:** See `ARCHITECTURE_AND_REQUIREMENTS.md` and `docs/decisions.md`.
-- **Current blockers:** No local prototype blocker. The supplied compiled IEEE PDF is included and verified as four pages. Synthetic data and small operational sets are not production evidence. Apply the form-specific `Name_RollNumber_` filename prefix to each upload. Cambria is assigned throughout editable deck text/theme; the local renderer lacks the font, so verify final wrapping in PowerPoint where Cambria is available.
-- **Next smallest task:** Check the v6 presentation in PowerPoint with Cambria available; rename submission files for each student's form.
+- **Current blockers:** No local prototype blocker. Evaluation is synthetic and operational case sets are small; results are not production evidence. MTTD and end-to-end service latency remain unmeasured.
+- **Next smallest task:** Extend evaluation across additional deterministic seeds and define a streaming protocol before reporting MTTD or end-to-end alert latency.
 
-## Iteration ledger (append only)
+## Codebase change ledger
 
 ### ITERATION 000 - 2026-11-10 - Architecture baseline prepared
 
@@ -108,7 +108,7 @@
 - **Tests/commands run:** `uv run pytest -q`; `uv run python -m datagard.visual_inspection`; `python3 -m compileall -q src tests`; `git diff --check`.
 - **Results:** PASS - 12 tests passed. Region-level at IoU ≥ 0.5: DIP-B0 TP=22, FP=18, FN=1, 23 GT regions, region F1=0.6984, mean matched IoU=0.8806; DIP-P1 TP=1, FP=18, FN=22, region F1=0.0476, mean matched IoU=1.0000 (one matched region). Pixel metrics remain unchanged and CSV/JSON outputs include denominators.
 - **Config/data/schema/docs changed:** Added the region-match threshold to central config and documented the matching method, scores, coverage and limitations. Refreshed artifacts under `artifacts/fingerprints/` and `artifacts/evaluation/dip/`.
-- **Known risks/regressions/blockers:** DIP-P1 performs materially worse on both pixel and component recovery; the negative result is retained. Synthetic pixel/channel ground truth remains a limitation. Downstream workflow and presentation checkpoints remain outstanding.
+- **Known risks/regressions/blockers:** DIP-P1 performs materially worse on both pixel and component recovery; the negative result is retained. Synthetic pixel/channel ground truth remains a limitation. Downstream workflow checkpoints remain outstanding.
 - **Next smallest task:** CP-4 detector evaluation using a separate train/validation/test group split; the existing test split remains untouched for DIP.
 
 ### ITERATION 007 - 2026-11-12 - CP-4 anomaly detection and measured ablation
@@ -186,7 +186,7 @@ Copy this for each meaningful iteration; fill it with verified facts.
 - Results: PASS / FAIL / NOT RUN (reason)
 - Config/data/schema/docs changed:
 - Known risks/regressions/blockers:
-- Next smallest task:
+- Next smallest codebase task:
 ```
 
 ### ITERATION 011 - 2026-11-12 - CP-8 live dashboard evidence
@@ -201,102 +201,18 @@ Copy this for each meaningful iteration; fill it with verified facts.
 - **Results:** PASS - final full suite passed 28 tests. Genuine browser screenshots were reviewed and saved for all three required views.
 - **Config/data/schema/docs changed:** Dashboard API base URL is configured; screenshot evidence paths and workflow are documented. No new dependency or external connector was added.
 - **Known risks/regressions/blockers:** Screens demonstrate a local synthetic app only. They are not production UI evidence or measured model results.
-- **Next smallest task:** CP-9 operational evaluation of fixed retrieval/RCA/safety cases and coherent publication artifacts.
+- **Next smallest task:** CP-9 operational evaluation of fixed retrieval/RCA/safety cases.
 
-### ITERATION 012 - 2026-11-12 - CP-9 operational measurements, report, and merged presentation
+### ITERATION 012 - 2026-11-12 - CP-9 operational evaluation and saved measurements
 
-- **Checkpoint:** CP-9 / measured evaluation and release evidence
-- **Requirement IDs:** G-05, G-06, G-07, G-11, G-16, G-17, NFR-03, NFR-08, NFR-09, NFR-12
-- **Change summary and reason:** Saved fixed-case operational evaluations for retrieval, RCA, and policy rejection; reconciled the IEEE manuscript against saved detector/DIP/operational outputs; combined the SIH deck with measured prototype evidence and the three genuine dashboard captures. Removed obsolete stack/benchmark claims from the ending slides and corrected the retained DIP method parameters.
-- **Files created/modified/deleted:** Added `src/datagard/operational_evaluation.py`, `output/DataGuard_AI_SIH_Integrated_v5.pptx`, screenshot/build validation artifacts; updated `output/DataGuard_AI_IEEE.tex`, `docs/evaluation_protocol.md`, `README.md`, and this ledger.
-- **Existing logic reused:** Existing local TF-IDF retriever, RCA hypotheses, typed action policy, saved detection/DIP evaluation pipeline, and the user-supplied SIH deck’s first five narrative slides.
-- **New logic added (why it is not duplicative):** A fixed-case evaluator records operational scores and per-case CSVs using existing services; no duplicate retrieval, RCA, or policy logic was introduced. The report and deck consume persisted outputs rather than inventing figures.
-- **Tests/commands run:** `UV_CACHE_DIR=/tmp/datagard-uv-cache uv run pytest -q`; `UV_CACHE_DIR=/tmp/datagard-uv-cache uv run python -m datagard.operational_evaluation`; Artifact Tool package/layout/first-party import validation; `git diff --check`.
-- **Results:** PASS - 28 tests passed (one upstream Starlette TestClient deprecation warning). Detection test n=72, F1=0.732/AP=0.591; matched structured+DIP n=43, F1=0.862/AP=0.673. DIP-B0 pixel F1=0.779/IoU=0.638 versus DIP-P1 F1=0.324/IoU=0.194 on 1,024 valid pixels. Retrieval hit@3=6/7 and MRR=0.857; RCA top-1=4/5/top-3=5/5; safety probes rejected 3/3. Combined deck has 11 slides and passed structural, layout, font-policy, and Artifact Tool import checks. Local LaTeX compilation was stopped at the user's direction; the IEEE source will be compiled in Overleaf.
-- **Config/data/schema/docs changed:** Measurements are saved under `artifacts/evaluation/operations/`; paper/deck report denominators and synthetic-set limits. The combined deck retains the SIH narrative and adds current implementation, results, screenshots, and limitations.
+- **Checkpoint:** CP-9 / measured operational evaluation
+- **Requirement IDs:** G-05, G-06, G-07, G-11, G-17, NFR-03, NFR-08, NFR-09, NFR-12
+- **Change summary and reason:** Added fixed-case operational evaluations for retrieval, RCA, and policy rejection so these existing services could be measured with saved case-level evidence.
+- **Files created/modified/deleted:** Added `src/datagard/operational_evaluation.py`; updated `docs/evaluation_protocol.md` and saved operational evaluation artifacts.
+- **Existing logic reused:** Existing local TF-IDF retriever, RCA hypotheses, typed action policy, and saved detection/DIP evaluation pipeline.
+- **New logic added (why it was not duplicative):** A fixed-case evaluator records operational scores and per-case CSVs using existing services; no duplicate retrieval, RCA, or policy logic was introduced.
+- **Tests/commands run:** `UV_CACHE_DIR=/tmp/datagard-uv-cache uv run pytest -q`; `UV_CACHE_DIR=/tmp/datagard-uv-cache uv run python -m datagard.operational_evaluation`; `git diff --check`.
+- **Results:** PASS - 28 tests passed (one upstream Starlette TestClient deprecation warning). Detection test n=72, F1=0.732/AP=0.591; matched structured+DIP n=43, F1=0.862/AP=0.673. DIP-B0 pixel F1=0.779/IoU=0.638 versus DIP-P1 F1=0.324/IoU=0.194 on 1,024 valid pixels. Retrieval hit@3=6/7 and MRR=0.857; RCA top-1=4/5/top-3=5/5; safety probes rejected 3/3.
+- **Config/data/schema/docs changed:** Operational measurements and case-level outputs are saved under `artifacts/evaluation/operations/`; their evaluation protocol is documented in `docs/evaluation_protocol.md`.
 - **Known risks/regressions/blockers:** All evaluation data are synthetic; operational sets are small and handcrafted; MTTD/end-to-end latency are unmeasured. No real external connector is invoked.
-- **Next smallest task:** Course review and, when available, evaluation on independently labeled real or approved production-like incidents.
-
-### ITERATION 013 - 2026-11-12 - Final handoff audit
-
-- **Checkpoint:** CP-9 / handoff verification
-- **Requirement IDs:** G-13, G-15, NFR-08, NFR-12
-- **Change summary and reason:** Reconciled README handoff text with the 11-slide final merged deck, corrected links to the repository's `Legacy_Docs_Imp/` architecture and ledger files, and moved superseded generated deck revisions out of `output/` so the final deliverable is unambiguous.
-- **Files created/modified/deleted:** Updated `README.md`; moved superseded generated presentations into `.presentation_build/superseded_outputs/`; no application code changed.
-- **Existing logic reused:** Existing tested `datagard` package and current final presentation/evaluation artifacts.
-- **New logic added (why it was not duplicative):** No runtime logic added.
-- **Tests/commands run:** `git diff --check`; live startup command `UV_CACHE_DIR=/tmp/datagard-uv-cache uv run uvicorn datagard.main:app --app-dir src --host 127.0.0.1 --port 8000` reached application startup, then could not bind because the sandbox denies localhost sockets.
-- **Results:** Documentation/link audit PASS. `README.md`'s module names match `src/datagard`. The local UI server is not left running; the saved genuine captures and previously passing 28-test suite remain the presentation/workflow evidence.
-- **Config/data/schema/docs changed:** README output references now identify the integrated deck, IEEE source, evaluation protocol, architecture report, and append-only ledger correctly.
-- **Known risks/regressions/blockers:** This sandbox prevents live localhost serving, so runtime screenshots were not recaptured in this audit. Screenshots on disk were captured from the earlier live local app. LaTeX compilation is left for Overleaf at the user's direction.
-- **Next smallest task:** Present the prototype for course review; expand validation with additional seeds and approved real or production-like data.
-
-### ITERATION 014 - 2026-11-12 - Final deck claim audit
-
-- **Checkpoint:** CP-9 / final presentation fidelity
-- **Requirement IDs:** G-13, G-15, G-16, G-17, NFR-08, NFR-12
-- **Change summary and reason:** Audited every slide's text against current implementation and removed a stale “six typed tools” count from the retained architecture slide. The final deck now says “typed tools (simulated)” without an unsupported operation count.
-- **Files created/modified/deleted:** Added `output/DataGuard_AI_SIH_Integrated_v5.pptx`; moved the superseded v4 deck to `.presentation_build/superseded_outputs/`; updated README and this ledger.
-- **Existing logic reused:** User SIH deck architecture slide and the current typed tool registry.
-- **New logic added (why it was not duplicative):** No runtime logic added; this is a claim correction in presentation content.
-- **Tests/commands run:** Artifact Tool finalization package integrity, geometry/font policy, first-party import; rendered and inspected changed slide 4; extracted final PPTX slide text and checked obsolete claim removal.
-- **Results:** PASS - 11 slides; package integrity and layout findings zero; first-party import passed. Slide 4 now accurately describes typed simulated actions without an outdated count.
-- **Config/data/schema/docs changed:** README points to v5; source SIH copy and its original problem/solution flow remain preserved.
-- **Known risks/regressions/blockers:** Locally launched UI serving remains disallowed by the sandbox; saved screenshots are genuine from the earlier live app. Overleaf compilation remains user-directed.
-- **Next smallest task:** Course review.
-
-### ITERATION 015 - 2026-11-12 - Submission package and repository link audit
-
-- **Checkpoint:** CP-9 / submission handoff
-- **Requirement IDs:** G-13, G-15, G-16, G-17, NFR-08, NFR-12
-- **Change summary and reason:** Added the supplied compiled IEEE paper PDF to `output/`, added the course Drive folder and direct GitHub artifact links to the README, and checked the paper/deck against the submission checklist. Relocated `ACTION.md` to the repository root and `AGENTS.md` to `Legacy_Docs_Imp/` without changing their contents before this ledger entry.
-- **Files created/modified/deleted:** Added `output/23cd3049_23cd3001_DataGuardAI.pdf`; updated `README.md` and this ledger; moved `Legacy_Docs_Imp/ACTION.md` to `ACTION.md` and `AGENTS.md` to `Legacy_Docs_Imp/AGENTS.md`.
-- **Existing logic reused:** Existing compiled paper, final 11-slide deck, saved synthetic evaluation outputs, and course submission checklist supplied by the user.
-- **New logic added (why it was not duplicative):** No application logic added. The README is an index to the existing code, evidence, and submission materials.
-- **Tests/commands run:** `pdfinfo` on the supplied and repository PDF; bundled `pdftoppm` rendered all four pages for visual inspection; PDF SHA-256 comparison; PPTX ZIP integrity and 11-slide content inspection.
-- **Results:** PASS - PDF is four pages, Letter size, unencrypted, and visually readable with no obvious clipping; copied file hash matches the supplied PDF. PPTX is structurally intact and includes the flow, implementation, measured results, and dashboard screenshots.
-- **Config/data/schema/docs changed:** README now includes the provided Drive link and direct GitHub links to source, report, datasets, metrics, masks, tests, and screenshots. It records the four-page PDF as present and the group-upload filename prefix as a form-specific final step.
-- **Known risks/regressions/blockers:** Dataset and all measured evaluations are synthetic/small as disclosed. Optional deck slide numbering skips from 04 to 08 and repeats 10 on the dashboard slides. Apply the required student-name/roll-number prefix on files uploaded through each student's form.
-- **Next smallest task:** Submit the four-page PDF separately and select no more than ten individually named supporting files; correct deck numbering if time permits.
-
-### ITERATION 016 - 2026-11-12 - DIP-centered presentation and Cambria styling
-
-- **Checkpoint:** CP-9 / final presentation polish
-- **Requirement IDs:** G-16, G-17, NFR-08, NFR-12
-- **Change summary and reason:** Revised the solution, architecture, method, implementation, and evaluation slides to make DIP's role as the visual-evidence bridge easy to see. The DQF → DIP regions → run/metric mapping is highlighted in the deck's teal visual language inspired by the architecture document. Normalized section labels and applied Cambria to editable text and theme font declarations.
-- **Files created/modified/deleted:** Added `output/DataGuard_AI_SIH_Integrated_v6.pptx`; updated `README.md` and this ledger.
-- **Existing logic reused:** The existing 11-slide deck, its genuine dashboard captures, current measured DIP outputs, and the architecture document's DQF/DIP workflow.
-- **New logic added (why it was not duplicative):** No runtime logic added. Slide styling and wording emphasize the existing encoder, OpenCV processing, traceable region mapping, and measured segmentation trade-offs.
-- **Tests/commands run:** LibreOffice PPTX-to-PDF render; reviewed a contact sheet of all 11 slides and full-size renders of changed slides 3-7; verified 11 slides, package integrity, Cambria on 152 editable slide text runs, and Cambria-only typeface declarations in the presentation OOXML.
-- **Results:** PASS - visual review shows the DIP card and evidence path clearly, both DIP methods and results remain readable, screenshots remain unchanged, and the section labels follow the deck order. PPTX package integrity passes.
-- **Config/data/schema/docs changed:** README now links v6 and records its Cambria usage and rendering caveat. No application behavior or evaluation outputs changed.
-- **Known risks/regressions/blockers:** Cambria is not installed in the local renderer, which substitutes another serif font during preview; confirm the final layout in PowerPoint with Cambria available. The genuine dashboard screenshots contain their original UI typography and remain unaltered.
-- **Next smallest task:** Open v6 in PowerPoint with Cambria available and complete the name/roll-number file prefixes for submission.
-
-### ITERATION 018 - 2026-11-12 - Align default branch README for evaluation
-
-- **Checkpoint:** CP-9 / evaluation handoff documentation
-- **Requirement IDs:** G-15, G-16, G-17, NFR-08, NFR-12
-- **Change summary and reason:** Replaced the root README on `dataguardv1` with the same evaluator-oriented version published on `main`, and preserved the former collaboration/readiness README in `Legacy_Docs_Imp/README_Collaboration.md` as requested.
-- **Files created/modified/deleted:** Updated `README.md`; added `Legacy_Docs_Imp/README_Collaboration.md`; appended this ledger entry. No application code or evaluation artifacts changed.
-- **Existing logic reused:** The evaluator README and figures from `main` commit `a88e128`; the original `dataguardv1` README is preserved verbatim in the legacy folder.
-- **New logic added (why it was not duplicative):** No application logic added; documentation branch views are aligned while preserving the prior README for collaboration reference.
-- **Tests/commands run:** `git diff --check`; local README link-target audit; byte comparison of the root README with `main:README.md`; byte comparison of the archived README with the previous `HEAD:README.md`.
-- **Results:** PASS - root README byte-matches `main:README.md`; archived README byte-matches the previous root README; all 21 local links resolve; `git diff --check` passes.
-- **Config/data/schema/docs changed:** Root README and legacy documentation only; append-only ledger updated.
-- **Known risks/regressions/blockers:** Existing uncommitted presentation output changes in the worktree are unrelated and must remain unstaged.
-- **Next smallest task:** Confirm the default-branch README and archived collaboration copy after publication.
-
-### ITERATION 019 - 2026-11-12 - Student-team voice in project README
-
-- **Checkpoint:** CP-9 / evaluation handoff documentation
-- **Requirement IDs:** G-15, G-16, G-17, NFR-08, NFR-12
-- **Change summary and reason:** Reworded the evaluation README in first-person plural so it reflects our student team's project, implementation, method, evidence, and limitations while retaining the measured figures and cautions. Synchronized the root README with `main` and kept the earlier collaboration README archived.
-- **Files created/modified/deleted:** Updated `README.md` and appended this ledger entry; `Legacy_Docs_Imp/README_Collaboration.md` remains unchanged.
-- **Existing logic reused:** Existing implementation, evaluation protocol, saved results, README links, and the prior archived collaboration README.
-- **New logic added (why it was not duplicative):** No runtime logic added; only the active README narrative voice changed.
-- **Tests/commands run:** `git diff --check`; local link and metric consistency audit; byte comparison with `main:README.md`; byte comparison of archived copy with the original README at `e06cdbb`.
-- **Results:** PASS - active README byte-matches `main`; archived collaboration copy remains byte-identical to the original; links resolve and measured figures remain unchanged.
-- **Config/data/schema/docs changed:** README and append-only project ledger only.
-- **Known risks/regressions/blockers:** Uncommitted deck changes remain outside this documentation commit.
-- **Next smallest task:** None for the README update.
+- **Next smallest task:** Extend evaluation across additional deterministic seeds and approved independently labeled data; define a streaming protocol before reporting MTTD or end-to-end alert latency.
