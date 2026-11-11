@@ -27,7 +27,7 @@ The original HSR-AGAI-001 problem remains the product core. The DIP component is
 6. **DIP evidence:** generate deterministic fingerprint images from a time window of pipeline telemetry; execute and save intermediate DIP outputs; compare baseline and improved segmentation; score against synthetic ground-truth masks.
 7. **Configuration:** thresholds, paths, model parameters, risk rules, image-processing parameters and feature lists belong in validated configuration. No scattered magic numbers.
 8. **Logging:** configure logging once at application startup. Modules use `logging.getLogger(__name__)`. Persist agent/tool actions separately as audit events.
-9. **Change control:** update the root `ACTION.md` at the end of every meaningful IDE iteration. Keep it concise, chronological and factual. Never silently change the architecture or requirements.
+9. **Change control:** update the root `ACTION.md` for meaningful codebase changes only (source, tests, configuration, reproducible data/evaluation artifacts, or runtime behavior). Exclude README/presentation-only edits, formatting, and branch/history administration. Keep it concise, chronological and factual. Never silently change the architecture or requirements.
 10. **Checkpoint discipline:** do not start a later checkpoint until the current checkpoint's acceptance tests pass or the blocker is explicitly recorded.
 
 ### Explicitly do not add unless approved
@@ -642,24 +642,24 @@ Secrets belong only in environment variables or local untracked `.env`; `.env.ex
 - Avoid duplicate log handlers/propagation. Application events go to stdout and optionally a rotating local file.
 - Agent audit trail is a database entity/event stream; ordinary text logs are not a substitute for it.
 
-### 10.3 `ACTION.md` is mandatory project memory
+### 10.3 `ACTION.md` is mandatory codebase project memory
 
 The root `ACTION.md` has two parts:
 
-**A. Current project state (rewrite this summary as state changes):** current checkpoint, working features, latest passing tests, known blockers, next approved task.
+**A. Current project state (rewrite this summary as state changes):** current checkpoint, implemented codebase capabilities, latest passing tests, known codebase blockers, and next codebase task.
 
-**B. Iteration ledger (append-only):** one entry per meaningful coding iteration. Every entry must include:
+**B. Codebase change ledger:** record meaningful changes that affect source code, tests, configuration, reproducible data/evaluation artifacts, or runtime behavior. Do not log README-only or presentation-only edits, formatting, or branch/history administration. Keep entries chronological; remove out-of-scope historic entries only when the project owner explicitly directs it. Applicable entries should include:
 
-- date/time and iteration/checkpoint ID;
+- date and iteration/checkpoint ID;
 - requirement IDs touched;
 - concise change summary and reason;
 - files created/modified/deleted;
 - tests/commands run and exact result;
 - migrations/data/config changes, if any;
 - known regressions/risks and unresolved questions;
-- next smallest task.
+- next smallest codebase task.
 
-The IDE must update `ACTION.md` after every meaningful change batch, including a failed attempt that changed code. Do not claim a test passed unless it was run. Do not delete old ledger entries. If a task results in no code/config/doc change, no ledger entry is required.
+The IDE must refresh the `ACTION.md` current-state summary after meaningful codebase changes, including a failed attempt that changed code. Do not claim a test passed unless it was run. A documentation-only or presentation-only task does not require a ledger entry.
 
 ### 10.4 Other documentation
 
@@ -857,7 +857,7 @@ The IDE must follow these rules on every iteration:
 12. Do not log secrets or full sensitive rows. Log identifiers and concise evidence summaries.
 13. Prefer small, readable functions with type hints and clear names. Avoid one giant service class or one giant `main.py`.
 14. Do not refactor unrelated code during a feature task. Separate necessary refactor from feature work and record why.
-15. After each meaningful change batch, run focused tests, update `ACTION.md`, and report files changed, tests run, and known gaps.
+15. After each meaningful codebase change batch, run focused tests, update `ACTION.md`, and report files changed, tests run, and known gaps.
 16. If a requirement conflicts with this architecture, stop and record the conflict in `ACTION.md` plus `docs/decisions.md`; do not invent a resolution silently.
 17. If blocked, report the smallest missing input or failing command. Do not paper over the issue with a mock that looks real.
 

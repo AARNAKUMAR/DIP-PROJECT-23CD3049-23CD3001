@@ -3,7 +3,7 @@
 Read these files before changing code:
 
 1. `ARCHITECTURE_AND_REQUIREMENTS.md` - authoritative project requirements and architecture.
-2. `ACTION.md` - current project state and append-only iteration history.
+2. `ACTION.md` - current project state and codebase change history.
 3. `README.md` and relevant `docs/` files once they exist.
 
 ## Mission
@@ -31,7 +31,7 @@ Build one integrated, reproducible local prototype of HSR-AGAI-001. Keep the ori
 - Do not add dependencies or infrastructure without documenting the requirement, alternative and trade-off first.
 - Do not create placeholder modules, fake metrics, hard-coded success data or pretend integrations.
 - Do not refactor unrelated code during a feature task.
-- Update tests, relevant documentation and `ACTION.md` in the same iteration. `ACTION.md` ledger entries are append-only.
+- Update tests and relevant documentation in the same iteration. Use `ACTION.md` only for changes affecting source code, tests, configuration, reproducible data/evaluation artifacts, or runtime behavior. Exclude README-only or presentation-only edits, formatting, and branch/history administration. Keep applicable entries chronological; remove out-of-scope historic entries only when the project owner explicitly directs it.
 - If a requirement conflicts with the architecture, stop and record the conflict in `ACTION.md` and `docs/decisions.md`; do not resolve it silently.
 
 ## Required loop for each task
@@ -43,7 +43,7 @@ Build one integrated, reproducible local prototype of HSR-AGAI-001. Keep the ori
 5. Run targeted unit/integration tests and report exact commands/results.
 6. Inspect changed files for duplicated business logic and configuration literals.
 7. Update README/docs/config examples as needed.
-8. Append an `ACTION.md` entry and refresh its current-state summary.
+8. Refresh the `ACTION.md` current-state summary; append a ledger entry only when the change affects the codebase as defined above.
 9. Report changed files, tests, blockers and next smallest task.
 
 ## Required iteration report
