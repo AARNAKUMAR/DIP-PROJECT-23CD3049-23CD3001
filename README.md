@@ -3,15 +3,15 @@
 **Agentic Data-Quality Incident Detection, Root-Cause Analysis and Guarded Remediation**<br>
 **Project ID:** HSR-AGAI-001 · **DIP integration:** Digital Image Processing-Based Visual Data-Quality Inspection
 
-DataGuard AI is a reproducible, local-first prototype for investigating unreliable data-pipeline runs. Its core workflow combines structured quality rules, anomaly detection, evidence-grounded root-cause hypotheses, local runbook retrieval, guarded simulated actions, human approval for higher-risk repair, and post-action verification.
+We developed DataGuard AI as a reproducible, local-first prototype for investigating unreliable data-pipeline runs. Our workflow combines structured quality rules, anomaly detection, evidence-grounded root-cause hypotheses, local runbook retrieval, guarded simulated actions, human approval for higher-risk repair, and post-action verification.
 
-Digital Image Processing (DIP) is a central perception contribution: the system encodes canonical telemetry as a Data Quality Fingerprint (DQF), processes it with classical image operations, then maps segmented regions back to run and metric evidence. DIP complements structured quality checks; it does not replace them or infer causes by itself.
+We made Digital Image Processing (DIP) a central perception contribution: our prototype encodes canonical telemetry as a Data Quality Fingerprint (DQF), processes it with classical image operations, and maps segmented regions back to run and metric evidence. DIP complements our structured quality checks; it does not replace them or infer causes by itself.
 
 > **Telemetry → DQF image → DIP regions → mapped run/metric evidence → investigation → guarded action → verification**
 
 ## Evaluation snapshot
 
-All measurements below are reproduced from the saved synthetic evaluation artifacts and documented in [the evaluation protocol](docs/evaluation_protocol.md). Denominators are included because the tested partitions differ by track.
+We report the measurements below from our saved synthetic evaluation artifacts and document the protocols in [our evaluation report](docs/evaluation_protocol.md). We include each denominator because our evaluation partitions differ by track.
 
 | Evaluation track | Dataset / denominator | Result | Interpretation |
 |---|---:|---|---|
@@ -23,33 +23,33 @@ All measurements below are reproduced from the saved synthetic evaluation artifa
 | RCA ranking | 5 fixed synthetic cases | top-1 **4/5**, top-3 **5/5** | Case-level functional evidence only. |
 | Action-policy probes | 3 invalid/unauthorized requests | rejected as expected **3/3** | These probes do not establish policy accuracy for arbitrary requests. |
 
-The data are generated synthetic scenarios, not externally collected production incidents. Evaluation is small and run-level; mean time to detect (MTTD) and end-to-end service latency are **not measured**. Methods, exact split/coverage, limitations, and per-case results are in [`docs/evaluation_protocol.md`](docs/evaluation_protocol.md) and `artifacts/evaluation/`.
+We generated the scenarios synthetically; they are not externally collected production incidents. Our evaluation is small and run-level, so we have **not measured** mean time to detect (MTTD) or end-to-end service latency. We document methods, exact split/coverage, limitations, and per-case results in [`docs/evaluation_protocol.md`](docs/evaluation_protocol.md) and save the outputs under `artifacts/evaluation/`.
 
-## What is implemented
+## What we implemented
 
-- **Data and quality:** deterministic synthetic pipeline runs with separate truth labels; strict JSONL input; schema and lineage metadata; a single structured quality engine and canonical feature vector.
-- **DIP:** calibrated DQF encoding with a validity mask and saved axis mappings; OpenCV-based global Otsu and adaptive/morphological methods; connected-region extraction, run/metric mapping, ground-truth comparison, masks, overlays, and metrics.
-- **Detection and investigation:** Isolation Forest and severity-rule baseline; incident deduplication; evidence-based RCA hypotheses using findings, history, schema and lineage; local TF-IDF retrieval over seven Markdown runbooks.
-- **Guarded response:** one orchestrator and typed tool registry; simulated quarantine/rerun; approval-gated schema-alignment simulation; isolated output artifact; post-action quality verification and audit trail.
-- **Persistence and interface:** SQLite persistence across application restarts; FastAPI routes and interactive API-backed Streamlit dashboard with overview, DQF, investigation, action/approval and evaluation views.
-- **Reproducibility:** configuration in `configs/default.yaml`, test suite in `tests/`, and saved evaluation outputs and genuine UI captures in the repository.
+- **Data and quality:** We generated deterministic synthetic pipeline runs with separate truth labels and implemented strict JSONL input, schema and lineage metadata, one structured quality engine, and a canonical feature vector.
+- **DIP:** We implemented calibrated DQF encoding with a validity mask and saved axis mappings; OpenCV-based global Otsu and adaptive/morphological methods; connected-region extraction; run/metric mapping; ground-truth comparison; and saved masks, overlays, and metrics.
+- **Detection and investigation:** We added an Isolation Forest and severity-rule baseline, incident deduplication, evidence-based RCA hypotheses using findings/history/schema/lineage, and local TF-IDF retrieval over seven Markdown runbooks.
+- **Guarded response:** We built one orchestrator and typed tool registry for simulated quarantine/rerun, approval-gated schema-alignment simulation, isolated output artifacts, post-action quality verification, and an audit trail.
+- **Persistence and interface:** We use SQLite persistence across application restarts, FastAPI routes, and an interactive API-backed Streamlit dashboard with overview, DQF, investigation, action/approval, and evaluation views.
+- **Reproducibility:** We keep configuration in `configs/default.yaml`, tests in `tests/`, and evaluation outputs and genuine UI captures in the repository.
 
-No production database, scheduler, cloud connector, or external LLM service is called. Remediation is simulated locally and source run records are preserved.
+We do not call a production database, scheduler, cloud connector, or external LLM service. We simulate remediation locally and preserve source run records.
 
-## Method at a glance
+## Our method at a glance
 
-1. Generate deterministic pipeline-run telemetry and keep scenario truth separate from model inputs.
-2. Apply structured quality rules and construct canonical model features.
-3. Encode a fixed telemetry window as a DQF image; preserve run/channel axis metadata and mark missing cells invalid.
-4. Segment the image using DIP-B0 and DIP-P1; map connected regions back to telemetry and score against synthetic ground-truth masks.
-5. Combine detector decisions and structured/DIP evidence to create incidents, rank RCA hypotheses, and retrieve relevant runbook sections.
-6. Plan only allowlisted typed actions; enforce preconditions and approval server-side; verify and persist simulated outcomes.
+1. We generate deterministic pipeline-run telemetry and keep scenario truth separate from model inputs.
+2. We apply structured quality rules and construct canonical model features.
+3. We encode a fixed telemetry window as a DQF image, preserve run/channel axis metadata, and mark missing cells invalid.
+4. We segment the image using DIP-B0 and DIP-P1, map connected regions back to telemetry, and score against synthetic ground-truth masks.
+5. We combine detector decisions and structured/DIP evidence to create incidents, rank RCA hypotheses, and retrieve relevant runbook sections.
+6. We plan only allowlisted typed actions, enforce preconditions and approval server-side, then verify and persist simulated outcomes.
 
-The full workflow and ownership boundaries are described in [`Legacy_Docs_Imp/ARCHITECTURE_AND_REQUIREMENTS.md`](Legacy_Docs_Imp/ARCHITECTURE_AND_REQUIREMENTS.md). DIP is an evidence source in this workflow—not a duplicate quality-rule engine, RCA engine, or autonomous action path.
+We describe the full workflow and module boundaries in [`Legacy_Docs_Imp/ARCHITECTURE_AND_REQUIREMENTS.md`](Legacy_Docs_Imp/ARCHITECTURE_AND_REQUIREMENTS.md). In our design, DIP supplies evidence; it does not duplicate the quality-rule or RCA engines or act autonomously.
 
 ## Run locally
 
-Requires Python 3.11+ and `uv`.
+To run our prototype, install Python 3.11+ and `uv`.
 
 ```bash
 uv sync --extra dev
@@ -61,7 +61,7 @@ uv run uvicorn datagard.main:app --app-dir src --reload
 - Start the dashboard in a second terminal: `uv run streamlit run dashboard/app.py`
 - Run tests: `uv run pytest -q`
 
-The API initializes the configured SQLite store and deterministic input data if the store is empty. To regenerate data and evaluation artifacts:
+When we start the API with an empty store, it initializes the configured SQLite database and deterministic input data. We can regenerate the data and evaluation artifacts with:
 
 ```bash
 uv run python -m datagard.ingestion
@@ -70,9 +70,9 @@ uv run python -m datagard.evaluation
 uv run python -m datagard.operational_evaluation
 ```
 
-The detection and DIP evaluations use group-separated partitions. The DIP benchmark trains its channel baseline on clean training runs and reports only complete held-out windows and valid pixels. Configuration, split IDs, predictions and confusion matrices are saved with the outputs. See the protocol before interpreting comparisons.
+We use group-separated partitions for detection and DIP evaluation. Our DIP benchmark fits channel baselines on clean training runs and reports only complete held-out windows and valid pixels. We save configuration, split IDs, predictions, and confusion matrices with the outputs; please consult our protocol when interpreting the comparisons.
 
-## Review the project evidence
+## Project evidence from our work
 
 - **Four-page IEEE conference paper (PDF):** [`output/23cd3049_23cd3001_DataGuardAI.pdf`](output/23cd3049_23cd3001_DataGuardAI.pdf) · editable source: [`output/DataGuard_AI_IEEE.tex`](output/DataGuard_AI_IEEE.tex)
 - **Presentation:** [`output/DataGuard_AI_SIH_Integrated_v6.pptx`](output/DataGuard_AI_SIH_Integrated_v6.pptx), an 11-slide project narrative with genuine dashboard captures.
@@ -87,6 +87,6 @@ The detection and DIP evaluations use group-separated partitions. The DIP benchm
 
 ## Scope and limitations
 
-This is an academic local prototype evaluated on deterministic synthetic data. Synthetic labels derive from predefined injected scenarios; results do not establish accuracy on independently labeled production data. The fixed retrieval, RCA, and policy evaluation sets are small. The adaptive DIP alternative performs worse than global Otsu in the reported pixel and region evaluation. Repair and rerun are bounded simulations over canonical run records rather than live data-platform operations. The current test suite and saved artifacts support reproducibility of the prototype, not production-readiness claims.
+We built and evaluated this academic local prototype using deterministic synthetic data. Our labels derive from predefined injected scenarios, so the results do not establish accuracy on independently labeled production data. Our fixed retrieval, RCA, and policy evaluation sets are small. The adaptive DIP alternative performs worse than global Otsu in our reported pixel and region evaluation. Our repair and rerun operations are bounded simulations over canonical run records, not live data-platform operations. The test suite and saved artifacts support reproducibility of our prototype; they do not establish production readiness.
 
-The optional submission materials are also linked in the [group Google Drive folder](https://drive.google.com/drive/folders/14eESeGpSued7mg_-TGGuvwqHC8BtWPKE?usp=sharing). Confirm folder access and apply the required student-name/roll-number filename prefix when preparing individual uploads.
+We have also linked our optional submission materials in the [group Google Drive folder](https://drive.google.com/drive/folders/14eESeGpSued7mg_-TGGuvwqHC8BtWPKE?usp=sharing). Before uploading, we should confirm folder access and apply the required student-name/roll-number prefix to each individual file.

@@ -286,3 +286,17 @@ Copy this for each meaningful iteration; fill it with verified facts.
 - **Config/data/schema/docs changed:** Root README and legacy documentation only; append-only ledger updated.
 - **Known risks/regressions/blockers:** Existing uncommitted presentation output changes in the worktree are unrelated and must remain unstaged.
 - **Next smallest task:** Confirm the default-branch README and archived collaboration copy after publication.
+
+### ITERATION 019 - 2026-11-12 - Student-team voice in project README
+
+- **Checkpoint:** CP-9 / evaluation handoff documentation
+- **Requirement IDs:** G-15, G-16, G-17, NFR-08, NFR-12
+- **Change summary and reason:** Reworded the evaluation README in first-person plural so it reflects our student team's project, implementation, method, evidence, and limitations while retaining the measured figures and cautions. Synchronized the root README with `main` and kept the earlier collaboration README archived.
+- **Files created/modified/deleted:** Updated `README.md` and appended this ledger entry; `Legacy_Docs_Imp/README_Collaboration.md` remains unchanged.
+- **Existing logic reused:** Existing implementation, evaluation protocol, saved results, README links, and the prior archived collaboration README.
+- **New logic added (why it was not duplicative):** No runtime logic added; only the active README narrative voice changed.
+- **Tests/commands run:** `git diff --check`; local link and metric consistency audit; byte comparison with `main:README.md`; byte comparison of archived copy with the original README at `e06cdbb`.
+- **Results:** PASS - active README byte-matches `main`; archived collaboration copy remains byte-identical to the original; links resolve and measured figures remain unchanged.
+- **Config/data/schema/docs changed:** README and append-only project ledger only.
+- **Known risks/regressions/blockers:** Uncommitted deck changes remain outside this documentation commit.
+- **Next smallest task:** None for the README update.
